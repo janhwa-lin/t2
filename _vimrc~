@@ -164,7 +164,6 @@ autocmd StdinReadPre * let s:std_in=1
 
 nmap <F5> :TagbarToggle<CR>
 map <F6> :BufExplorer<CR>
-
 nmap <silent> <F7> <Plug>ToggleProject
 map <F8> :NERDTreeToggle<CR>
 set cul
