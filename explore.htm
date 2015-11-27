@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<STYLE>
+
+
+body {   font: 10pt Arial }
+table {  font: 10pt Arial }
+td {border: 0px solid #268a16;  }
+a.btn_not_sel{text-decoration: none;color:#808080;}
+    a.btn_blue_sel, .btn_blue_sel {
+        display: inline-block;
+        //background: transparent;
+        background: #ff8100;
+		text-color: #ffffff;
+        //border: 1px solid #2d9cf9;
+        //-webkit-border-radius: 4px;
+        //-moz-border-radius: 4px;
+        //border-radius: 4px;
+        //-webkit-transition: all .25s ease-in-out;
+        //-moz-transition: all .25s ease-in-out;
+        //transition: all .25s ease-in-out;
+        //-webkit-appearance: none;
+        height: 28px;
+        line-height: 28px;
+        padding: 0 10px;
+        outline: none;
+        //text-transform: uppercase;
+        margin: 5px;
+        font-weight: 300;
+        font-size: .85em;
+        //color: #2d9cf9;
+    }
+
+        a.btn_blue_sel:hover, .btn_blue_sel:hover, .btn_blue_sel:focus {
+            border-color: #FFFFFF;
+            text-decoration: none;
+        //    //color: #2562b0;
+            color: #FFFFFF;
+            cursor: pointer;
+        //    background-color: #ffffff;
+        }
+
+		 a.btn_not_sel:hover , a.btn_not_sel:focus, a.btn_not_sel:active{
+			text-decoration:none;
+		}
+
+		a:visited{
+			text-decoration:none;
+		}
+
+        .btn_blue_sel:active , .btn_not_sel:active{
+        //    background: #ff80ff;
+            box-shadow: none;
+        }
+
+    .btn_blue_sel {
+		color: #FFFFFF;
+        text-decoration: none;
+    }
+
+nav{
+	//background:rgb(80,60,125);
+	//color:#ffffff;
+}
+//nav.top_list ul {
+//	list-style-type:none;
+//	max-width:960px;
+//	overflow:hidden;
+//	padding:0;
+//	margin:1em auto
+//}
+//nav.top_list ul li {
+//	float:left
+//}
+//nav.top_list ul li a {
+//	display:block;
+//	padding:10px 20px;
+//	color:inherit;
+//    text-decoration: none;
+//}
+//nav.top_list ul li a:hover,nav.top_list ul li a.active {
+//	background:#eee;
+//	color:#000;
+//	text-decoration:none;
+//	text-shadow:0 1px 0 #fff
+//}
+
+#FunctionGroup {
+	//max-width:960px;
+	padding:10px;
+	margin:0 auto;
+	background:#fff;
+	box-shadow:0 0 8px rgba(0,0,0,0.02)
+}
+
+#FunctionGroup p{
+	background-color: #FFFFFF;
+}
+#FunctionGroup h1:first-child,#helpContent h2:first-child {
+	margin-top:0
+}
+#FunctionGroup h1 {
+	clear:both;
+	margin:0 0 0.5em;
+	color:#248;
+	font-size:32px;
+	line-height:40px;
+	font-weight:normal
+}
+#FunctionGroup h2 { clear:both;
+	margin:1.5em 0 1em;
+	border-bottom:1px solid #ccc;
+	color:#555;
+	font-size:24px;
+	line-height:21px;
+	text-transform:uppercase
+}
+
+#instrument{
+	width:80%;
+	//margin: 10px;
+	padding: 20px;
+	background: #ffffff;
+	text-align:center;
+	align:center;
+
+}
+
+#instrument td {
+	text-align:center;
+	font-size: 18px;
+	//padding: 20px;
+	//margin: 10px;
+	width:100px;
+	color: #222222;
+	//background-color: #0000cc;
+	//background: #d000dd;
+}
+
+img.instrument_img {
+	margin: 0px;
+	//padding:1px;
+	width: 150px;
+}
+
+#instrument td.instrument_status {
+	color:#444444;
+	//font-size:14px;
+	//background:#00ff00;
+}
+
+#instrument td.instrument_status_linked {
+	color:#0000ff;
+	font-size:20px;
+	//background:#a0ff00;
+}
+
+a.btn_blue_basic,.btn_blue_basic{display:inline-block;background:transparent;border:1px solid #2d9cf9;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-transition:all .25s ease-in-out;-moz-transition:all .25s ease-in-out;transition:all .25s ease-in-out;-webkit-appearance:none;height:48px;line-height:48px;padding:0 20px;outline:none;text-transform:uppercase;font-weight:300;font-size:.85em;color:#2d9cf9;}
+a.btn_blue_basic:hover,.btn_blue_basic:hover,.btn_blue_basic:focus{border-color:#2562b0;text-decoration:none;color:#2562b0;cursor:pointer;background-color:#ffffff;}
+.btn_blue_basic:active{background:#d2dcff;box-shadow:none;}
+.btn_blue_basic{text-decoration:none}
+
+a.text-white, a.text-white:hover {color:#ffffff}
+
+.bs-callout{padding:20px;margin:20px 0;border:1px solid #eee;border-left-width:5px;border-radius:3px}
+.bs-callout h4{margin-top:0;margin-bottom:5px}
+.bs-callout p:last-child{margin-bottom:0}
+.bs-callout code{border-radius:3px}
+.bs-callout+.bs-callout{margin-top:-5px}
+.bs-callout-danger{border-left-color:#ce4844}
+.bs-callout-danger h4{color:#ce4844}
+.bs-callout-warning{border-left-color:#aa6708}
+.bs-callout-warning h4{color:#aa6708}
+.bs-callout-info{border-left-color:#1b809e}
+.bs-callout-info h4{color:#1b809e}
+
+a.thumbnail {text-decoration: none;}
+a.thumbnail:hover {text-decoration: none;}
+
+a {text-decoration: none;}
+a:hover {text-decoration: none;}
+
+.bs-glyphicons{margin:0 -10px 20px;overflow:hidden}
+.bs-glyphicons-list{padding-left:0;list-style:none}
+.bs-glyphicons li{float:left;width:25%;height:115px;padding:10px;font-size:10px;line-height:1.4;text-align:center;background-color:#f9f9f9;border:1px solid #fff}
+.bs-glyphicons .glyphicon{margin-top:5px;margin-bottom:10px;font-size:24px}
+.bs-glyphicons .glyphicon-class{display:block;text-align:center;word-wrap:break-word}
+.bs-glyphicons li:hover{color:#fff;background-color:#563d7c}
+@media (min-width:768px){.bs-glyphicons{margin-right:0;margin-left:0} .bs-glyphicons li{width:12.5%;font-size:12px} }
+.bs-customizer-alert .glyphicon{margin-right:5px}
+.bs-dropzone .glyphicon-download-alt{font-size:40px}
+	
+a.bit_value_sel, a.bit_value_sel:hover, a.bit_value_sel:active, a.bit_value_sel:focus{
+	margin-left:40px;
+	color:purple;
+	font-weight: bold;
+	text-decoration: none;
+}
+a.bit_value_not_sel, a.bit_value_not_sel:hover, a.bit_value_not_sel:active, a.bit_value_not_sel:focus{
+	margin-left:40px;
+	color:gray;
+	text-decoration: none;
+}
+
+  #red, #green, #blue {
+    float: left;
+    clear: left;
+    width: 300px;
+    margin: 15px;
+  }
+  #red .ui-slider-range { background: #ef2929; }
+  #red .ui-slider-handle { border-color: #ef2929; }
+  #green .ui-slider-range { background: #8ae234; }
+  #green .ui-slider-handle { border-color: #8ae234; }
+  #blue .ui-slider-range { background: #729fcf; }
+  #blue .ui-slider-handle { border-color: #729fcf; }
+
+ <style>#slider { margin: 10px; }	</style>
+
+</STYLE>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--
+
+
+  <link rel="stylesheet" href="js/assets/bootstrap/css/bootstrap.min.css">
+
+  -->
+  <link rel="stylesheet" href="js/win8_busy.css">
+  <link rel="stylesheet" href="js/assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="js/assets/mobirise/css/style.css">
+  <link rel="stylesheet" href="js/assets/mobirise-gallery/style.css">
+  <link rel="stylesheet" href="js/assets/mobirise-slider/style.css">
+  <link rel="stylesheet" href="js/assets/mobirise/css/mbr-additional.css" type="text/css">
+
+  <link href="js/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<script src="js/jquery_ui/external/jquery/jquery.js"></script>
+<script src="js/jquery_ui/jquery-ui.js"></script>
+<link href= "js/jquery_ui/jquery-ui.css" rel="stylesheet">
+
+  <script>
+  function hexFromRGB(r, g, b) {
+    var hex = [
+      r.toString( 16 ),
+      g.toString( 16 ),
+      b.toString( 16 )
+    ];
+    $.each( hex, function( nr, val ) {
+      if ( val.length === 1 ) {
+        hex[ nr ] = "0" + val;
+      }
+    });
+    return hex.join( "" ).toUpperCase();
+  }
+  function refreshSwatch() {
+    var red = $( "#red" ).slider( "value" ),
+      green = $( "#green" ).slider( "value" ),
+      blue = $( "#blue" ).slider( "value" ),
+      hex = hexFromRGB( red, green, blue );
+    $( "#swatch" ).css( "background-color", "#" + hex );
+  }
+  $(function() {
+    $( "#red, #green, #blue" ).slider({
+      orientation: "horizontal",
+      range: "min",
+      max: 255,
+      value: 127,
+      slide: refreshSwatch,
+      change: refreshSwatch
+    });
+    $( "#red" ).slider( "value", 255 );
+    $( "#green" ).slider( "value", 140 );
+    $( "#blue" ).slider( "value", 60 );
+  });
+  </script>
+
+</HEAD>
+<body class="ui-widget-content" style="border:0;">
+
+  <script src="js/jquery.min.js"></script>
+
+<SECTION class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--transparent mbr-navbar--sticky mbr-navbar--auto-collapse" 
+id="top">
+<DIV class="mbr-navbar__section mbr-section">
+<DIV class="mbr-section__container container">
+<DIV class="mbr-navbar__container">
+<DIV class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand"><A 
+class="mbr-navbar__brand-link mbr-brand mbr-brand--inline text-white" href="http://mobirise.com/"><SPAN 
+class="mbr-brand__logo"><IMG class="mbr-navbar__brand-img mbr-brand__img" alt="" 
+src="js/logo.png"></SPAN>               
+          <SPAN class="mbr-brand__name">USB PD</SPAN>                     </A> 
+                </DIV>
+<DIV class="mbr-navbar__hamburger mbr-hamburger text-white"><SPAN class="mbr-hamburger__line"></SPAN></DIV>
+<DIV class="mbr-navbar__column mbr-navbar__menu"><NAV class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
+<DIV class="mbr-navbar__column">
+<UL class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active" style="color:#FFFFFF">
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__link btn text-white" href="#top">Top</A></LI>
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__link btn text-white" href="#pre_instrument_link">Instrument Link</A></LI>
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__link btn text-white" href="#id_evb_conn">Connection</A></LI>
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__link btn text-white" href="#id_measure_result">Result</A></LI></UL></DIV>
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__link btn text-white" href="#id_rt7800_i2c">I2C</A></LI>
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__link btn text-white" href="#id_run_test_label">Run Test</A></LI>
+<DIV class="mbr-navbar__column">
+
+<!--
+<UL class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active">
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__btn btn btn-default" href="http://mobirise.com/index.html#contacts1-12">check status</A></LI>
+</UL>
+-->
+</DIV></NAV> 
+                </DIV></DIV></DIV></DIV>
+</SECTION>
+  
+
+
+<!--
+  <nav class="top_list" style="background-color:#000000";>
+	  <ul>
+		  <li> <a class="" href="#"> Top </a> </li>
+		  <li> <a class="postfoot" href="#"> Spec </a> </li>
+		  <li> <a class="" href="#"> EVB </a> </li>
+		  <li> <a class="Test Item" id="Test_Item_id" href="#"> Test Items </a> </li>
+		  </ul>
+  </nav>
+-->
+
+<div style="background:rgb(80,60,125); padding:20px color:#FFF";> 
+
+	<div style="height:80px"></div>
+<h1 style="padding-bottom:5px;line-height:10px; font-size:40px; margin-left:80px; color:#fff">
+	RT7800
+</h1>
+<p style="margin-top:5px;padding-top:5px;font-size:20px; margin-left:80px; color:#ccc">
+ART7800 is an USB Power Delivery (USB PD) controller with highly integrated functions for notebook, tablet, mobile phone or any other devices with USB Type-C (USB-C) receptacle. It is designed to embed ARM CortexTM-M0 MCU so as to facilitate various functions of communication protocol, protections and customized requirements. The IC allows designer to define an USB-C port as a Provider, Consumer or a Dual-Role Port by program setup.
+</p>
+	<div style="height:64px" id="pre_instrument_link"></div>
+</div>
+
+
+
+<button onclick="myFunction()">Copy Text</button>
+
+
+<script>
+function myFunction() {
+
+	var ele = document.getElementById("btn_i2c_wr_reg");
+	ele.setAttribute("data_log", "my123 456");
+	ele.click();
+}
+
+</script>
+  <input type="range" id="sliderBar2" min="0" max="100" step="1" value="0" onChange="showValue(this.value);"/>
+  <script type="text/javascript">
+  function showValue(num){
+           var result = document.getElementById('result');     
+           result.innerHTML = num;
+  }
+  </script>
+  <div id="result" style="height:40px;width:40px;border:1px solid #999">
+  </div>
+ 
+<div id="red"></div>
+<div id="green"></div>
+<div id="blue"></div>
+
+
+
+<!-- Instrument Link -->
+<div id="id_instrument_link" style="padding:10px"> 
+	<h1 style="margin:20px" class="page-header">Link Instrument</h1>
+	<table id="instrument"  align="center">
+		<tr>
+		<td> Source Meter 25</td><F5>
+		<td> Source Meter 26</td>
+		<td> Source Meter 27</td>
+		<td> Scope</td>
+		<td> E-Load</td>
+		<td> Chamber 4350</td>
+		</tr>
+		<tr>
+			<td> <a href="#instrument_href_25"> <img class="instrument_img" id="instrument_link_25" src="instrument/source_meter_25.png"> </a></td>
+			<td> <a href="#instrument_href_26"> <img class="instrument_img" id="instrument_link_26" src="instrument/source_meter_26.png"> </a></td>
+			<td> <a href="#instrument_href_27"> <img class="instrument_img" id="instrument_link_27" src="instrument/source_meter_27.png"> </a></td>
+			<td> <a href="#instrument_href_3"> <img class="instrument_img" id="instrument_link_03" src="instrument/scope.png"> </a></td>
+			<td> <a href="#instrument_href_4"> <img class="instrument_img" id="instrument_link_04" src="instrument/eload.png"> </a></td>
+			<td> <a href="#instrument_href_5"> <img class="instrument_img" id="instrument_link_05" src="instrument/chamber.png"> </a></td>
+		</tr>
+		<tr>
+		<td class="instrument_status" id="instrument_status_25"> not connected</td>
+		<td class="instrument_status" id="instrument_status_26"> not connected</td>
+		<td class="instrument_status" id="instrument_status_27"> not connected</td>
+		<td class="instrument_status" id="instrument_status_3"> not connected</td>
+		<td class="instrument_status" id="instrument_status_4"> not connected</td>
+		<td class="instrument_status" id="instrument_status_5"> not connected</td>
+		</tr>
+	</table>
+</div>
+<!-- Instrument Link -->
+
+
+<section>
+<div id="id_measure_result" style="padding:10px"> 
+  <h1 style="margin:20px;" > Result</h1> 
+
+<div class="bs-callout bs-callout-info">
+<div class="row" style="padding:10px;margin:8px;">
+
+  <!-- Test Result: Protection -->
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail"> <a  href="sub_test_vbus_ovp.htm" style="text-decoration: none">
+      <div class="caption" style="background:#2080A0;text-align:center;color:white;padding:1px">
+        <h3>VBUS OVP</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_vbus_ovp" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+   <!-- Test Result: Protection -->
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/DAC CV/protect_dac_cv.xlsx" style="text-decoration: none">
+      <div class="caption" style="background:#2080A0;text-align:center;color:white;padding:1px">
+        <h3>DAC CV</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_dac_cv" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+ <!-- Test Result: Protection -->
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail"> <a  href="sub_test_vbus_uvp.htm" style="text-decoration: none">
+      <div class="caption" style="background:#2080A0;text-align:center;color:white;padding:1px">
+        <h3>VBUS UVP</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_vbus_uvp" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <!-- Test Result: Protection -->
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail"> <a  href="sub_test_vx_ovp.htm" style="text-decoration: none">
+      <div class="caption" style="background:#2080A0;text-align:center;color:white;padding:1px">
+        <h3>VX OVP</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_vx_ovp" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <!-- Test Result: Protection -->
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail"> <a  href="sub_test_quick_cs_ocp.htm" style="text-decoration: none">
+      <div class="caption" style="background:#2080A0;text-align:center;color:white;padding:1px">
+        <h3>Quick CS OCP</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_quick_cs_ocp" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <!-- Test Result: Protection -->
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail"> <a  href="sub_test_accurate_cs_ocp.htm" style="text-decoration: none">
+      <div class="caption" style="background:#2080A0;text-align:center;color:white;padding:1px">
+        <h3>Accurate CS OCP</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_accurate_cs_ocp" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <!-- Test Result: Protection -->
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail"> <a  href="sub_test_icsp_icsn.htm" style="text-decoration: none">
+      <div class="caption" style="background:#2080A0;text-align:center;color:white;padding:1px">
+        <h3>ICSP ICSN</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_icsp_icsn" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div class="bs-callout bs-callout-danger">
+<div class="row" style="padding:10px;margin:2px;">
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/ADC CC1/adc_cc1.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC CC1</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_cc1" style="width:auto;height:auto"></div>
+      	<div class="caption"  id = "id_result_adc_cc1_stable" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/ADC CC2/adc_cc2.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC CC2</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_cc2" style="width:auto;height:auto"></div>
+      	<div class="caption"  id = "id_result_adc_cc2_stable" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/ADC VBUS/adc_vbus.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC VBUS</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_vbus" style="width:auto;height:auto"></div>
+      	<div class="caption"  id = "id_result_adc_vbus_stable" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <div class="col-sm-12 col-md-8">
+    <div class="thumbnail"> <a  href="waveform/ADC CS/adc_cs.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC CS</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_cs" style="width:auto;height:auto"></div>
+      	<div class="caption"  id = "id_result_adc_cs_stable" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/ADC VBRL/adc_vbrl.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC VBRL</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_vbrl" style="width:auto;height:auto"></div>
+      	<div class="caption"  id = "id_result_adc_vbrl_stable" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/ADC VSYS5/adc_vsys5.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC VSYS5</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_vsys5" style="width:auto;height:auto"></div>
+      	<div class="caption"  id = "id_result_adc_vsys5_stable" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/ADC AIN1/adc_ain1.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC AIN1</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_ain1" style="width:auto;height:auto"></div>
+      	<div class="caption"  id = "id_result_adc_ain1_stable" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/ADC AIN2/adc_ain2.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC AIN2</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_ain2" style="width:auto;height:auto"></div>
+      	<div class="caption"  id = "id_result_adc_ain2_stable" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/ADC VBP/adc_vbp.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC VBP</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_vbp" style="width:auto;height:auto"></div>
+      	<div class="caption"  id = "id_result_adc_vbp_stable" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/ADC VCONN/adc_vconn.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC VCONN</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_vconn" style="width:auto;height:auto"></div>
+      	<div class="caption"  id = "id_result_adc_vconn_stable" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/ADC TS/adc_ts.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC TS</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_ts" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail"> <a  href="waveform/ADC CSP/adc_csp.csv" style="text-decoration: none">
+      <div class="caption" style="background:purple;text-align:center;color:white;padding:1px">
+        <h3>ADC CSP</h3>
+      </div> </a>
+      	<div class="caption"  id = "id_result_adc_csp" style="width:auto;height:auto"></div>
+      	<div class="caption"  id = "id_result_adc_csp_stable" style="width:auto;height:auto"></div>
+    </div>
+  </div>
+
+</div> </div>
+
+
+
+
+
+</div>
+</section>
+
+<!--
+<div id = "VBUS_OVP" style = "min-width: 310px; height: 650px; margin: 0 auto"></div>
+-->
+
+<!-- show zoom picture -->
+<section class="mbr-gallery"
+         id="id_evb_conn" style="background:#808080;">
+    <!-- Gallery -->
+    <h1 style="color:#ffffff;padding:20px;padding-bottom:0px;margin-bottom:0px"> Connection </h1>
+    <div class=" container mbr-gallery-layout-default">
+        <div>
+            <div class="row mbr-gallery-row">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
+                    <a href="#lb-id_evb_conn" data-toggle="modal" data-slide-to="0"> <img alt="" src="evb\protect_vbus_ovp\gui_conn.png"> <span class="icon glyphicon glyphicon-zoom-in"></span> </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
+                    <a href="#lb-id_evb_conn" data-toggle="modal" data-slide-to="1"> <img alt="" src="evb\protect_vbus_ovp\evb_meas_protection_1.png"> <span class="icon glyphicon glyphicon-zoom-in"></span> </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
+                    <a href="#lb-id_evb_conn" data-toggle="modal" data-slide-to="2"> <img alt="" src="evb\protect_vbus_ovp\evb_meas_protection_3.png"> <span class="icon glyphicon glyphicon-zoom-in"></span> </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
+                    <a href="#lb-id_evb_conn" data-toggle="modal" data-slide-to="3"> <img alt="" src="evb\protect_vbus_ovp\evb_meas_protection_2.png"> <span class="icon glyphicon glyphicon-zoom-in"></span> </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
+                    <a href="#lb-id_evb_conn" data-toggle="modal" data-slide-to="4"> <img alt="" src="evb\protect_vbus_ovp\evb_meas_protection_2.png"> <span class="icon glyphicon glyphicon-zoom-in"></span> </a>
+                </div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mbr-gallery-item">
+                    <a href="#lb-id_evb_conn" data-toggle="modal" data-slide-to="5"> <img alt="" src="evb\protect_vbus_ovp\rt7800_pin_out_wlcsp.png"> <span class="icon glyphicon glyphicon-zoom-in"></span> </a>
+                </div>
+                <div class="clearfix"></div>
+            </div><!-- Lightbox -->
+            <div tabindex="-1" class="mbr-slider modal fade carousel slide" id="lb-id_evb_conn"
+                 data-interval="false" data-keyboard="true" data-app-prevent-settings="">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <ol class="carousel-indicators">
+                                <li data-slide-to="0" data-app-prevent-settings="" data-target="#lb-id_evb_conn"></li>
+                                <li data-slide-to="1" data-app-prevent-settings="" data-target="#lb-id_evb_conn"></li>
+                                <li data-slide-to="2" data-app-prevent-settings="" data-target="#lb-id_evb_conn"></li>
+                                <li data-slide-to="3" data-app-prevent-settings="" data-target="#lb-id_evb_conn"></li>
+                                <li data-slide-to="4" data-app-prevent-settings="" data-target="#lb-id_evb_conn"></li>
+                                <li data-slide-to="5" data-app-prevent-settings="" data-target="#lb-id_evb_conn"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item "><img alt="" src="evb\protect_vbus_ovp\gui_conn.png"></div>
+                                <div class="item "><img alt="" src="evb\protect_vbus_ovp\evb_meas_protection_1.png"></div>
+                                <div class="item "><img alt="" src="evb\protect_vbus_ovp\evb_meas_protection_3.png"></div>
+                                <div class="item "><img alt="" src="evb\protect_vbus_ovp\evb_meas_protection_2.png"></div>
+                                <div class="item "><img alt="" src="evb\protect_vbus_ovp\rt7800_pin_out.png"></div>
+                                <div class="item active"><img alt="" src="evb\protect_vbus_ovp\rt7800_pin_out_wlcsp.png"></div>
+                            </div>
+                            <a class="left carousel-control" role="button" href="#lb-id_evb_conn" data-slide="prev">
+                                <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>                         <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" role="button" href="#lb-id_evb_conn" data-slide="next">
+                                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <a class="close" role="button" href="#" data-dismiss="modal">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                <span class="sr-only">Close</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</section>
+<!-- show zoom picture -->
+
+
+
+<table  bgcolor="#6900b3" width="100%" height="10pt"> <tr><td></td></tr> </table>
+
+
+
+<section style="height:200px">
+	<div style="margin:20px" id="id_rt7800_i2c" >
+		<h1>I2C Access </h1>
+			Reg addr: <input type="edit" name="reg_addr" id="edit_i2c_rd_addr" value="4000_9034" style="color:purple;height:50px;font-size:30px;width:200px"> 
+			<a href="#test1" id="btn_i2c_rd_reg" class="btn_blue_basic"> read </a>
+			wr data: <input type="edit" name="reg_wdata" id="edit_i2c_wdata" style="color:purple;height:50px;font-size:30px;width:60px"> 
+			<a href="#test1" id="btn_i2c_wr_reg" class="btn_blue_basic"> write </a>
+			<h2 id="i2c_rd_reg_result"> read_back = 0x??</h2>
+			
+	<br/>
+	<br/>
+	</div>
+
+</section>
+
+
+<div id="id_run_test_label" style="height:80px;text-align:center;width:100%"> </div>
+
+<section>
+  <h1 style="margin:20px" class="page-header">Protection test</h2>
+  <div class="bs-glyphicons">
+    <ul class="bs-glyphicons-list">
+
+        <a href="#none333"><li id="btn_test_vbus_ovp">
+          <span class="run_test_vbus_ovp glyphicon glyphicon-eur" aria-hidden="true"></span>
+          <span class="run_test_vbus_ovp glyphicon-class">VBUS OVP</span>
+        </li> </a>
+	
+        <a href="#none"><li id="btn_test_vbus_uvp">
+          <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+          <span class="glyphicon-class">VBUS UVP</span>
+        </li> </a>
+
+        <a href="#none"><li id="btn_test_vx_ovp">
+          <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+          <span class="glyphicon-class">VX OVP</span>
+        </li> </a>
+
+        <a href="#none"><li id="btn_test_quick_cs_ocp">
+          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+          <span class="glyphicon-class">Quick CS OCP</span>
+        </li> </a>
+
+        <a href="#none"><li id="btn_test_accurate_cs_ocp">
+          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+          <span class="glyphicon-class">Accurate CS OCP</span>
+        </li> </a>
+
+        <a href="#icsp_icsn"><li  id="btn_test_icsp_icsn">
+          <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+          <span class="glyphicon-class">ICSP ICSN</span>
+        </li> </a>
+
+        <a href="#none"><li id="btn_test_dac_cv">
+          <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+          <span class="glyphicon-class">DAC CV</span>
+        </li> </a>
+
+	</ul>
+ </div>
+
+  <h1 style="margin:20px" class="page-header">ADC test</h2>
+  <div class="bs-glyphicons">
+    <ul class="bs-glyphicons-list">
+
+        <a href="#adc_cc1"><li  id="btn_test_adc_cc1">
+          <span class="glyphicon glyphicon-eur" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC CC1</span>
+        </li> </a>
+	
+        <a href="#adc_cc1"><li  id="btn_test_adc_cc2">
+          <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC CC2</span>
+        </li> </a>
+
+        <a href="#adc_cc1"><li  id="btn_test_adc_cs">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC CS</span>
+        </li> </a>
+
+        <a href="#adc_cc1"><li  id="btn_test_adc_vbus">
+          <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC VBUS</span>
+        </li> </a>
+
+        <a href="#adc_cc1"><li  id="btn_test_adc_vbrl">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC VBRL</span>
+        </li> </a>
+
+        <a href="#adc_cc1"><li  id="btn_test_adc_vsys5">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC SYS5</span>
+        </li> </a>
+
+        <a href="#btn_test_adc_ain1"><li  id="btn_test_adc_ain1">
+          <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC AIN1</span>
+        </li> </a>
+
+        <a href="#btn_test_adc_ain2"><li  id="btn_test_adc_ain2">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC AIN2</span>
+        </li>
+
+        <a href="#btn_test_adc_vbp"><li  id="btn_test_adc_vbp">
+          <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC VBP</span>
+        </li> </a>
+
+        <a href="#btn_test_adc_vconn"><li  id="btn_test_adc_vconn">
+          <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC VCONN</span>
+        </li> </a>
+
+        <a href="#adc_cc1"><li  id="btn_test_adc_ts">
+          <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC TS</span>
+        </li> </a>
+
+        <a href="#adc_cc1"><li  id="btn_test_adc_csp">
+          <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+          <span class="glyphicon-class">ADC CSP</span>
+        </li> </a>
+
+	</div>
+</section>
+
+
+<div class="progress" id="id_test_progress" style="margin:20px">
+  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+    <span class="sr-only">100% Complete</span>100%
+  </div>
+</div>
+
+<section>
+<div class="row" style="padding:20px;margin:20px">
+  <div class="col-lg-10">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button id="id_gui_reg_search_btn" class="btn btn-default " type="button">Search</button>
+      </span>
+      <input id="id_gui_reg_search_text" type="text" class="form-control" placeholder="Search for...">
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+<div id="id_reg_setting"> </div>
+
+<!--
+<div class="row" style="padding:10px">
+  <div class="col-lg-10">
+    <div class="input-group">
+ 	  <span class="input-group-addon" id="basic-addon3">VBUS_OC[7:0]</span>
+      <input  type="text" class="form-control" text="0x12">
+      <span class="input-group-btn">
+      <button id="id_gui_reg_search_btn" class="btn btn-default " type="button">write</button>
+      </span>
+	  <span class="input-group-addon" id="basic-addon3">0x4000_9034[3:1]</span>
+    </div>
+	<p> asdasdfasdasdasdfafdafda</p>
+
+    <div class="input-group">
+ 	  <span class="input-group-addon" id="basic-addon3">VBUS_OC[7:0]</span>
+      <input  type="text" class="form-control" value="0x33" placeholder="0x00">
+      <span class="input-group-btn">
+      <button id="id_gui_reg_search_btn" class="btn btn-default " type="button">write</button>
+      </span>
+	  <span class="input-group-addon" id="basic-addon3">0x4000_9034[3:1]</span>
+    </div>
+	<p> asdasdfasdasdasdfafdafda</p>
+    <div class="input-group">
+ 	  <span class="input-group-addon" id="basic-addon3">VBUS_OC[7:0]</span>
+      <input type="text" class="form-control" placeholder="0x00">
+      <span class="input-group-btn">
+      <button id="id_gui_reg_search_btn" class="btn btn-default " type="button">write</button>
+	  <span class="input-group-addon" id="basic-addon3">0x4000_9034[3:1]</span>
+      </span>
+	  <span class="input-group-addon">description....</span>
+    </div>
+	<p> asdasdfasdasdasdfafdafda</p>
+  </div>
+</div>
+
+-->
+
+<div style="height:300px"> </div>
+
+</section>
+
+<section>
+<div>
+<span class="label label-default">Default</span>
+<span class="label label-primary">Primary</span>
+<span class="label label-success">Success</span>
+<span class="label label-info">Info</span>
+<span class="label label-warning">Warning</span>
+<span class="label label-danger">Danger</span>
+</div>
+</section>
+
+<section>
+<div>
+<span class="label label-default">Default</span>
+<span class="label label-primary">Primary</span>
+<span class="label label-success">Success</span>
+<span class="label label-info">Info</span>
+<span class="label label-warning">Warning</span>
+<span class="label label-danger">Danger</span>
+</div>
+</section>
+
+
+
+
+<script src="js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+  <script src="js/assets/jquery/jquery.min.js"></script>
+  <script src="js/assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="js/assets/smooth-scroll/SmoothScroll.js"></script>
+  <script src="js/assets/jarallax/jarallax.js"></script>
+  <script src="js/assets/masonry/masonry.pkgd.min.js"></script>
+  <script src="js/assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="js/assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
+  <script src="js/assets/mobirise/js/script.js"></script>
+  <script src="js/assets/mobirise-gallery/script.js"></script>
+
+  <script src="waveform/VBUS OVP/gen_result_vbus_ovp.js"></script>
+  <script src="waveform/VBUS UVP/gen_result_vbus_uvp.js"></script>
+  <script src="waveform/VX OVP/gen_result_vx_ovp.js"></script>
+  <script src="waveform/Quick CS/gen_result_quick_cs_ocp.js"></script>
+  <script src="waveform/Accurate CS OCP/gen_result_accurate_cs_ocp.js"></script>
+  <script src="waveform/ICSP ICSN/gen_result_icsp_icsn.js"></script>
+  <script src="waveform/DAC CV/gen_result_dac_cv.js"></script>
+  <script src="waveform/ADC CC1/gen_result_adc_cc1.js"></script>
+  <script src="waveform/ADC CC2/gen_result_adc_cc2.js"></script>
+  <script src="waveform/ADC CS/gen_result_adc_cs.js"></script>
+  <script src="waveform/ADC VBUS/gen_result_adc_vbus.js"></script>
+  <script src="waveform/ADC VBRL/gen_result_adc_vbrl.js"></script>
+  <script src="waveform/ADC VSYS5/gen_result_adc_vsys5.js"></script>
+  <script src="waveform/ADC AIN1/gen_result_adc_ain1.js"></script>
+  <script src="waveform/ADC AIN2/gen_result_adc_ain2.js"></script>
+  <script src="waveform/ADC VBP/gen_result_adc_vbp.js"></script>
+  <script src="waveform/ADC VCONN/gen_result_adc_vconn.js"></script>
+  <script src="waveform/ADC TS/gen_result_adc_ts.js"></script>
+  <script src="waveform/ADC CSP/gen_result_adc_csp.js"></script>
+
+
+
+  <script src="waveform/VBUS OVP/gen_result_vbus_ovp_stable.js"></script>
+  <script src="waveform/VBUS UVP/gen_result_vbus_uvp_stable.js"></script>
+  <script src="waveform/VX OVP/gen_result_vx_ovp_stable.js"></script>
+  <script src="waveform/Quick CS/gen_result_quick_cs_ocp_stable.js"></script>
+  <script src="waveform/Accurate CS OCP/gen_result_accurate_cs_ocp_stable.js"></script>
+  <script src="waveform/ICSP ICSN/gen_result_icsp_icsn_stable.js"></script>
+  <script src="waveform/DAC CV/gen_result_dac_cv_stable.js"></script>
+  <script src="waveform/ADC CC1/gen_result_adc_cc1_stable.js"></script>
+  <script src="waveform/ADC CC2/gen_result_adc_cc2_stable.js"></script>
+  <script src="waveform/ADC CS/gen_result_adc_cs_stable.js"></script>
+  <script src="waveform/ADC VBUS/gen_result_adc_vbus_stable.js"></script>
+  <script src="waveform/ADC VBRL/gen_result_adc_vbrl_stable.js"></script>
+  <script src="waveform/ADC VSYS5/gen_result_adc_vsys5_stable.js"></script>
+  <script src="waveform/ADC AIN1/gen_result_adc_ain1_stable.js"></script>
+  <script src="waveform/ADC AIN2/gen_result_adc_ain2_stable.js"></script>
+  <script src="waveform/ADC VBP/gen_result_adc_vbp_stable.js"></script>
+  <script src="waveform/ADC VCONN/gen_result_adc_vconn_stable.js"></script>
+  <script src="waveform/ADC TS/gen_result_adc_ts_stable.js"></script>
+  <script src="waveform/ADC CSP/gen_result_adc_csp_stable.js"></script>
+
+
+<!-- highcharts -->
+<script src = "js/highcharts.js"></script>
+<script src = "js/modules/exporting.js"></script>
+<!-- highcharts -->
+
+
+</BODY>
+</HTML>

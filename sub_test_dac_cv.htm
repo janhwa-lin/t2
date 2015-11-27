@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<STYLE>
+
+
+body {   font: 10pt Arial }
+table {  font: 10pt Arial }
+td {border: 0px solid #268a16;  }
+a.btn_not_sel{text-decoration: none;color:#808080;}
+    a.btn_blue_sel, .btn_blue_sel {
+        display: inline-block;
+        //background: transparent;
+        background: #ff8100;
+		text-color: #ffffff;
+        //border: 1px solid #2d9cf9;
+        //-webkit-border-radius: 4px;
+        //-moz-border-radius: 4px;
+        //border-radius: 4px;
+        //-webkit-transition: all .25s ease-in-out;
+        //-moz-transition: all .25s ease-in-out;
+        //transition: all .25s ease-in-out;
+        //-webkit-appearance: none;
+        height: 28px;
+        line-height: 28px;
+        padding: 0 10px;
+        outline: none;
+        //text-transform: uppercase;
+        margin: 5px;
+        font-weight: 300;
+        font-size: .85em;
+        //color: #2d9cf9;
+    }
+
+        a.btn_blue_sel:hover, .btn_blue_sel:hover, .btn_blue_sel:focus {
+            border-color: #FFFFFF;
+            text-decoration: none;
+        //    //color: #2562b0;
+            color: #FFFFFF;
+            cursor: pointer;
+        //    background-color: #ffffff;
+        }
+
+		 a.btn_not_sel:hover , a.btn_not_sel:focus, a.btn_not_sel:active{
+			text-decoration:none;
+		}
+
+		a:visited{
+			text-decoration:none;
+		}
+
+        .btn_blue_sel:active , .btn_not_sel:active{
+        //    background: #ff80ff;
+            box-shadow: none;
+        }
+
+    .btn_blue_sel {
+		color: #FFFFFF;
+        text-decoration: none;
+    }
+
+nav{
+	//background:rgb(80,60,125);
+	//color:#ffffff;
+}
+//nav.top_list ul {
+//	list-style-type:none;
+//	max-width:960px;
+//	overflow:hidden;
+//	padding:0;
+//	margin:1em auto
+//}
+//nav.top_list ul li {
+//	float:left
+//}
+//nav.top_list ul li a {
+//	display:block;
+//	padding:10px 20px;
+//	color:inherit;
+//    text-decoration: none;
+//}
+//nav.top_list ul li a:hover,nav.top_list ul li a.active {
+//	background:#eee;
+//	color:#000;
+//	text-decoration:none;
+//	text-shadow:0 1px 0 #fff
+//}
+
+#FunctionGroup {
+	//max-width:960px;
+	padding:10px;
+	margin:0 auto;
+	background:#fff;
+	box-shadow:0 0 8px rgba(0,0,0,0.02)
+}
+
+#FunctionGroup p{
+	background-color: #FFFFFF;
+}
+#FunctionGroup h1:first-child,#helpContent h2:first-child {
+	margin-top:0
+}
+#FunctionGroup h1 {
+	clear:both;
+	margin:0 0 0.5em;
+	color:#248;
+	font-size:32px;
+	line-height:40px;
+	font-weight:normal
+}
+#FunctionGroup h2 { clear:both;
+	margin:1.5em 0 1em;
+	border-bottom:1px solid #ccc;
+	color:#555;
+	font-size:24px;
+	line-height:21px;
+	text-transform:uppercase
+}
+
+#instrument{
+	width:80%;
+	//margin: 10px;
+	padding: 20px;
+	background: #ffffff;
+	text-align:center;
+	align:center;
+
+}
+
+#instrument td {
+	text-align:center;
+	font-size: 18px;
+	//padding: 20px;
+	//margin: 10px;
+	width:100px;
+	color: #222222;
+	//background-color: #0000cc;
+	//background: #d000dd;
+}
+
+img.instrument_img {
+	margin: 0px;
+	//padding:1px;
+	width: 150px;
+}
+
+#instrument td.instrument_status {
+	color:#444444;
+	//font-size:14px;
+	//background:#00ff00;
+}
+
+#instrument td.instrument_status_linked {
+	color:#0000ff;
+	font-size:20px;
+	//background:#a0ff00;
+}
+
+a.btn_blue_basic,.btn_blue_basic{display:inline-block;background:transparent;border:1px solid #2d9cf9;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;-webkit-transition:all .25s ease-in-out;-moz-transition:all .25s ease-in-out;transition:all .25s ease-in-out;-webkit-appearance:none;height:48px;line-height:48px;padding:0 20px;outline:none;text-transform:uppercase;font-weight:300;font-size:.85em;color:#2d9cf9;}
+a.btn_blue_basic:hover,.btn_blue_basic:hover,.btn_blue_basic:focus{border-color:#2562b0;text-decoration:none;color:#2562b0;cursor:pointer;background-color:#ffffff;}
+.btn_blue_basic:active{background:#d2dcff;box-shadow:none;}
+.btn_blue_basic{text-decoration:none}
+
+.myButton_CH1 {
+	background-color:#f0f000;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:17px;
+	padding:4px 16px;
+	text-decoration:none;
+}
+.myButton_CH1:hover {
+	background-color:#e0e000;
+	text-decoration:none;
+}
+.myButton_CH1:active {
+	position:relative;
+	text-decoration:none;
+	top:1px;
+}
+
+.myButton_CH3 {
+	background-color:#007dc1;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #124d77;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:4px 16px;
+	text-decoration:none;
+}
+.myButton_CH3:hover {
+	background-color:#0061a7;
+	text-decoration:none;
+}
+.myButton_CH3:active {
+	position:relative;
+	text-decoration:none;
+	top:1px;
+}
+
+.myButton_CH2 {
+	background-color:#30e000;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #268a16;
+	display:inline-block;
+	cursor:pointer;
+	color:#306108;
+	font-family:Arial;
+	font-size:17px;
+	padding:4px 16px;
+	text-decoration:none;
+}
+.myButton_CH2:hover {
+	background-color:#5cb811;
+	text-decoration:none;
+}
+.myButton_CH2:active {
+	position:relative;
+	text-decoration:none;
+	top:1px;
+}
+
+.myButton_CH4 {
+	background-color:#E00010;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #d02718;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:4px 16px;
+	text-decoration:none;
+}
+.myButton_CH4:hover {
+	background-color:#d00010;
+	text-decoration:none;
+}
+.myButton_CH4:active {
+	position:relative;
+	text-decoration:none;
+	top:1px;
+}
+
+body{
+    font-family: MuseoSans, serif;
+    font-size:18px;
+    color: #313131;
+    background: #ffffff;
+    overflow-x:hidden;
+}
+
+body {font-family: "Helvetica Neue", Arial, "Helvetica", Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased; 
+	-webkit-text-size-adjust: none; 
+	width: 100%!important; 
+	height: 100%; }
+
+p{
+    font-size:16px;
+    color: #515151;
+    background: #e1e3e4;
+    overflow-x:hidden;
+}
+
+li, a{
+    font-size:16px;
+}
+
+table.mtp_table{
+    margin: 0 0 0 23px;	
+	text-align: center;
+
+    font-size:16px;
+    color: #313131;
+}
+
+table.waveform td{
+	padding: 15px;
+    margin: 5 5 5 23px;	
+    font-size:12px;
+	vertical-align: top;
+}
+table.RICHTEK_HEAD_LINE td{
+	padding: 15px;
+    margin: 5 5 5 23px;	
+    font-size:42px;
+	vertical-align: top;
+}
+
+  .firstcol {
+    border-right: 1px solid #833;
+  }
+  .lastcol {
+    border-left: 1px solid #999;
+  }
+
+
+#nestedlist, #nestedlist ul {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  list-style-type: none;
+  margin-left:0;
+  padding-left:30px;
+  /* text-indent: -4px; Not used due to class .connect below */
+}
+
+/* UL Layer 1 Rules */
+#nestedlist {
+  font-size: 20px;
+  font-weight:bold;
+}
+
+/* UL Layer 2 Rules */
+#nestedlist ul {
+  font-size: 18px;
+  font-weight: normal;
+  margin-top: 3px;
+}
+
+/* UL Layer 3 Rules */
+#nestedlist ul ul {
+  font-size: 16px;
+}
+
+/* UL 4 Rules */
+#nestedlist ul ul ul {
+  font-size: 14px;
+}
+
+
+#nestedlist ul li a {
+
+  text-decoration: none;
+  border: 1px solid #888;
+  border-width: 0 0 1px 1px;
+  border-radius: 0 0 0 10px;
+}
+
+#nestedlist .connect {
+  border-left: 1px solid gray;
+}
+
+#nestedlist a:before {
+  content: '...';
+  color: transparent;
+}
+
+td.test_connection {
+	vertical-align: top;
+	text-align: center;
+	background-color:#ffffff;
+}
+
+  
+#box-table-a
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 16px;
+	width: 100px;
+	text-align: center;
+	border-collapse: collapse;
+}
+#box-table-a th
+{
+	font-size: 22px;
+	font-weight: normal;
+	//padding: 3px;
+	padding-top: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+
+
+	background: #b9c9fe;
+	//border-top: px solid #aabcfe;
+	border-right: 1px solid #d0dafd;
+	border-bottom: 1px solid #d0dafd;
+	color: #039;
+}
+#box-table-a td
+{
+	font-size: 18px;
+	padding-top: 1px;
+    padding-right: 3px;
+    padding-bottom: 1px;
+    padding-left: 3px;
+
+
+	border-right: 1px solid #d0dafd;
+	border-bottom: 1px solid #d0dafd;
+	color: #033;
+}
+.oce-second
+{
+	background: #b9c9fe;
+	padding: 3px;
+	color: #039;
+	border-right: 1px solid #d0dafd;
+
+}
+//#box-table-a tr:hover td
+//{
+//	background: #e8edff;
+//	color: #339;
+//}
+
+.floating-box {
+    float: left;
+    width: 250px;
+    height: 175px;
+    margin: 10px;
+    border: 3px solid #8AC007;  
+}
+
+
+.postcard{background-repeat:no-repeat;background-position:50% 0;display:block;height:500px;overflow:hidden;position:relative;text-decoration:none;width:100%}
+.postcard-bg{height:100%;width:100%;position:absolute;z-index:0;top:0;left:0;background-repeat:no-repeat}
+img.postcard-bg{height:auto;width:100%}
+.no_min_rates{margin-bottom:15px}
+.postcard+#weeklyEmailLink{margin-top:15px}
+.postcard .pc_count_nha,.postcard .pc_count{display:block;color:#fff!important;font-weight:bold;font-size:24px;letter-spacing:0;margin:5px 0 0 0;text-shadow:1px 1px 1px #000}
+.postcard .pr2_bg{position:relative;z-index:2}
+.with_rec_tooltip .pr2_bg{margin:15px!important}
+h1, p {font-family:"Microsoft JhengHei";}
+.pr2_bg p,.pr2_bg span{display:block;color:#fff;font-size:4em;font-weight:bold;letter-spacing:-1px;margin:0;padding:0;line-height:.65em;position:absolute;bottom:0;right:0; }
+.postcard .pr2_bg{padding:10px;margin:40px;float:left;display:inline;max-width:90%;font-size:100%;background:#000;background:rgba(0,90,0,0.6)}
+.postcard-link .pr2_bg{cursor:pointer}
+.pr2_bg p,.pr2_bg span{position:static;font-size:4em;line-height:1;font-weight:normal;text-shadow:1px 1px 1px #000}
+.pr2_bg p a,.pr2_bg span a{font-weight:normal}
+.with_airport_tooltip .postcard .pr2_bg{margin-right:53px!important}
+.lp__index__pc__overlay .pr2_bg{left:0;right:0;float:none;position:absolute;display:block;bottom:0;margin:0;max-width:none;padding:24px 16px 16px 16px;background-color:transparent;background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(rgba(0,0,0,0.75)));background-image:-webkit-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,0.75) 100%);background-image:linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,0.75) 100%);-webkit-font-smoothing:subpixel-antialiased}
+
+
+
+
+.bs-callout{padding:20px;margin:20px 0;border:1px solid #eee;border-left-width:5px;border-radius:3px}
+.bs-callout h4{margin-top:0;margin-bottom:5px}
+.bs-callout p:last-child{margin-bottom:0}
+.bs-callout code{border-radius:3px}
+.bs-callout+.bs-callout{margin-top:-5px}
+.bs-callout-danger{border-left-color:#ce4844}
+.bs-callout-danger h4{color:#ce4844}
+.bs-callout-warning{border-left-color:#aa6708}
+.bs-callout-warning h4{color:#aa6708}
+.bs-callout-info{border-left-color:#1b809e}
+.bs-callout-info h4{color:#1b809e}
+
+
+
+</STYLE>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="js/jquery.min.js"></script>
+
+<!--
+
+<LINK href="Mobirise%20Mobile%20Website%20Builder.files/bootstrap.min.css" rel="stylesheet">   
+<LINK href="Mobirise%20Mobile%20Website%20Builder.files/css.css" rel="stylesheet">   
+<LINK href="Mobirise%20Mobile%20Website%20Builder.files/style(1).css" rel="stylesheet">   
+<LINK href="Mobirise%20Mobile%20Website%20Builder.files/style(2).css" rel="stylesheet">   
+<LINK href="Mobirise%20Mobile%20Website%20Builder.files/mbr-additional.css" rel="stylesheet" type="text/css">
+<LINK href="Mobirise%20Mobile%20Website%20Builder.files/animate.min.css" rel="stylesheet">   
+<LINK href="Mobirise%20Mobile%20Website%20Builder.files/socicon.min.css" rel="stylesheet">   
+<LINK href="Mobirise%20Mobile%20Website%20Builder.files/style.css" rel="stylesheet">   
+
+  -->
+
+  <link rel="stylesheet" href="js/assets/animate.css/animate.min.css">
+  <link rel="stylesheet" href="js/assets/mobirise/css/style.css">
+  <link rel="stylesheet" href="js/assets/mobirise-gallery/style.css">
+  <link rel="stylesheet" href="js/assets/mobirise-slider/style.css">
+  <link rel="stylesheet" href="js/assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link rel="stylesheet" href="js/assets/bootstrap/css/bootstrap.min.css">
+
+  <link href="js/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+</HEAD>
+<BODY>
+
+
+
+<SECTION class="mbr-navbar mbr-navbar--freeze mbr-navbar--absolute mbr-navbar--transparent mbr-navbar--sticky mbr-navbar--auto-collapse" 
+id="top">
+<DIV class="mbr-navbar__section mbr-section">
+<DIV class="mbr-section__container container">
+<DIV class="mbr-navbar__container">
+<DIV class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand"><A 
+class="mbr-navbar__brand-link mbr-brand mbr-brand--inline text-white" href="http://mobirise.com/"><SPAN 
+class="mbr-brand__logo"><IMG class="mbr-navbar__brand-img mbr-brand__img" alt="" 
+src="js/logo.png"></SPAN>               
+          <SPAN class="mbr-brand__name">USB PD</SPAN>                     </A> 
+                </DIV>
+<DIV class="mbr-navbar__hamburger mbr-hamburger text-white"><SPAN class="mbr-hamburger__line"></SPAN></DIV>
+<DIV class="mbr-navbar__column mbr-navbar__menu"><NAV class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
+<DIV class="mbr-navbar__column">
+<UL class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active">
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__link btn text-white" href="#top">Top</A></LI>
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__link btn text-white" href="#pre_instrument_link">Instrument Link</A></LI>
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__link btn text-white" href="#id_evb_conn">Connection</A></LI>
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__link btn text-white" href="#id_measure_result">Result</A></LI></UL></DIV>
+<DIV class="mbr-navbar__column">
+
+<!--
+<UL class="mbr-navbar__items mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-inverse mbr-buttons--active">
+  <LI class="mbr-navbar__item"><A class="mbr-buttons__btn btn btn-default" href="http://mobirise.com/index.html#contacts1-12">check status</A></LI>
+</UL>
+-->
+</DIV></NAV> 
+                </DIV></DIV></DIV></DIV>
+</SECTION>
+  
+
+  <title>RT7800 VBUS_OVP Auto Test</title>
+<table class="RICHTEK_HEAD_LINE" style="background:#204686; width:100%;height:100px">
+	<tr>
+		<td width="20px"></td>
+		<td style="color:#fff">RICHTEK</td>
+		<td width="100px"></td>
+		<td style="color:#fff"> RT7800 test report</td>
+		<td style="color:#fff" width="400px" align="right">2015-11-01 22:26</td>
+	</tr>
+</table>
+<ul id="nestedlist">
+    <li><a id="list_Test Group" href="#">Test Group</a>
+    <ul>
+        <br/><li><a id="list_Protection Test" href="#Protection Test"> Protection Test</a>
+        <ul>
+        <li> <a id="list_VBUS OVP" href="#VBUS OVP"> VBUS OVP</a></li>
+        <li> <a id="list_VBUS UVP" href="#VBUS UVP"> VBUS UVP</a></li>
+        <li> <a id="list_VX OVP" href="#VX OVP"> VX OVP</a></li>
+        <li> <a id="list_QUICK CS OCP" href="#QUICK CS OCP"> QUICK CS OCP</a></li>
+        <li> <a id="list_Accurate CS OCP" href="#Accurate CS OCP"> Accurate CS OCP</a></li>
+        <li> <a id="list_DAC CV" href="#DAC CV"> DAC CV</a></li>
+		</ul></li>
+        <br/><li><a id="list_ADC Sweep" href="#ADC Sweep"> ADC Sweep</a>
+        <ul>
+        <li> <a id="list_ADC CC1" href="#ADC CC1"> ADC CC1</a></li>
+        <li> <a id="list_ADC CC2" href="#ADC CC2"> ADC CC2</a></li>
+        <li> <a id="list_ADC CS" href="#ADC CS"> ADC CS</a></li>
+        <li> <a id="list_ADC VBUS" href="#ADC VBUS"> ADC VBUS</a></li>
+        <li> <a id="list_ADC VBRL" href="#ADC VBRL"> ADC VBRL</a></li>
+        <li> <a id="list_ADC VSYS5" href="#ADC VSYS5"> ADC VSYS5</a></li>
+        <li> <a id="list_ADC AIN1" href="#ADC AIN1"> ADC AIN1</a></li>
+        <li> <a id="list_ADC AIN2" href="#ADC AIN2"> ADC AIN2</a></li>
+        <li> <a id="list_ADC VBP" href="#ADC VBP"> ADC VBP</a></li>
+        <li> <a id="list_ADC VCONN" href="#ADC VCONN"> ADC VCONN</a></li>
+        <li> <a id="list_ADC TS" href="#ADC TS"> ADC TS</a></li>
+        <li> <a id="list_ADC CSP" href="#ADC CSP"> ADC CSP</a></li>
+	</ul>
+	</ul>
+</ul>
+<div id="id_result_id_result_dac_cv"></div>
+<div style="background:#6900b3; width:100%; height:10pt"></div>
+<div id="id_result_id_result_dac_cv"></div>
+<div style="background:#6900b3; width:100%; height:10pt"></div>
+
+
+<script src="js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+<script src="js/assets/jquery/jquery.min.js"></script>
+<script src="js/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/assets/smooth-scroll/SmoothScroll.js"></script>
+<script src="js/assets/jarallax/jarallax.js"></script>
+<script src="js/assets/masonry/masonry.pkgd.min.js"></script>
+<script src="js/assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="js/assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
+<script src="js/assets/mobirise/js/script.js"></script>
+<script src="js/assets/mobirise-gallery/script.js"></script>
+
+
+<!-- highcharts -->
+<script src = "js/highcharts.js"></script>
+<script src = "js/modules/exporting.js"></script>
+<!-- highcharts -->
+
+
+
+</BODY>
+</HTML>
